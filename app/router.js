@@ -2,11 +2,17 @@ import Ember from 'ember';
 import config from './config/environment';
 
 const Router = Ember.Router.extend({
-  location: config.locationType,
-  rootURL: config.rootURL
+  location: config.locationType
 });
 
-Router.map(function() {
+export default Router.map(function() {
+  this.route('posts', {path: '/'}, function() {
+    this.route("new");
+  });
+  this.route('post', {path: '/post/:post_id'}, function() {
+    this.route('edit');
+    this.route('comments', function() {
+      this.route('new');
+    });
+  });
 });
-
-export default Router;
