@@ -6,12 +6,12 @@ const Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.route('posts', {path: '/'}, function() {
+  this.resource('posts', {path: '/'}, function() {
     this.route("new");
   });
-  this.route('post', {path: '/post/:post_id'}, function() {
+  this.resource('post', {path: '/post/:post_id'}, function() {
     this.route('edit');
-    this.route('comments', function() {
+    this.resource('comments', function() {
       this.route('new');
     });
   });
