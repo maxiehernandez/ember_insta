@@ -6,6 +6,15 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy:{
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' wss://localhost:3000 ws://localhost:3000 ws://localhost:4500 localhost:3000 localhost:4000 localhost:5000",
+      'img-src': "'self'",
+      'style-src': " 'self' 'unsafe-inline' 'unsafe-eval' wss://localhost:3000 ws://localhost:3000 localhost:3000",
+      'media-src': "'self'"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -29,6 +38,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.startUrl = "http://localhost:3000/"
+    ENV.startSocket = "ws://localhost:3000/"
   }
 
   if (environment === 'test') {
