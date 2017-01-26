@@ -1,0 +1,12 @@
+I am the posts index. I show all the post.
+{{#each model as |post| }}
+  <ul>
+    <li>
+      Title: {{post.name}}
+      <br>
+      Pic: {{post.image_url}}
+      <br>
+      Caption: {{post.caption}}
+    </li>
+  </ul>
+{{/each}}

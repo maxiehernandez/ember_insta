@@ -2,6 +2,6 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   post: DS.belongsTo('post', {async:true}),
-  body: DS.attr('text'),
+  body: DS.attr('string'),
   post_id: DS.attr('integer')
 });
