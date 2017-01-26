@@ -1,12 +1,19 @@
-I am the posts index. I show all the post.
-{{#each model as |post| }}
-  <ul>
-    <li>
-      Title: {{post.name}}
-      <br>
-      Pic: {{post.image_url}}
-      <br>
-      Caption: {{post.caption}}
-    </li>
-  </ul>
+I am the post index - I show all the post.
+
+<br><br>
+
+Click {{!#link-to }}here{{!/link-to}} to create a new post.
+
+<br><br>
+
+{{#each model as |post|}}
+  {{#link-to "posts.show" post}}
+    <ul>
+      <li>
+        {{post.image_url}}
+        <br>
+        {{post.name}}
+      </li>
+    </ul>
+    {{/link-to}}
 {{/each}}
