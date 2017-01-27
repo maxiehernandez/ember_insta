@@ -3,14 +3,20 @@ Here I will add a form to upload a new photo.
 
 <ul>
   <li>
-    Title: <input type="text" name="" value="">
+    Picture URL: {{input type="text" id="new-pic" value=imageUrl enter="newPost"}}
+    <!-- <input type="text" name="" value="imageUrl"> -->
     <br><br>
-    Pic: <input type="text" name="" value="">
+    Name: {{input type="text" id="new-name" value=name enter="newPost"}}
+    <!-- <input type="text" name="" value="name"> -->
     <br><br>
-    Caption: <input type="text" name="" value="">
+    Caption: {{input type="text" id="new-caption" value=caption enter="newPost"}}
+    <!-- <input type="text" name="" value="caption"> -->
   </li>
 </ul>
 
 <br><br><br><br>
 
+
 {{#link-to 'posts' class="button"}}Back{{/link-to}}
+
+<button type="button" name="button" {{action "newPost"}}>Submit</button>
