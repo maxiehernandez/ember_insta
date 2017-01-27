@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  store: Ember.inject.service(),
+  store: Ember.inject.service("store"),
   actions: {
     newPost() {
       if (this.get('name'), this.get('imageUrl'), this.get('caption')) {
