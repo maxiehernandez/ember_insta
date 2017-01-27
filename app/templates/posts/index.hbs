@@ -2,7 +2,7 @@ I am the post index - I show all the post.
 
 <br><br>
 
-Click {{!#link-to }}here{{!/link-to}} to create a new post.
+Click {{#link-to "posts.new"}}here{{/link-to}} to create a new post.
 
 <br><br>
 
@@ -13,6 +13,8 @@ Click {{!#link-to }}here{{!/link-to}} to create a new post.
         {{post.image_url}}
         <br>
         {{post.name}}
+        <br>
+        {{post.caption}}
       </li>
     </ul>
     {{/link-to}}

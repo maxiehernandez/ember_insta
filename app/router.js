@@ -7,19 +7,14 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('posts', {path: '/'}, function() {
-    this.route("new");
+    this.route('edit', {path: 'post/:post_id/edit'});
+    this.route("new", {path: '/post/new'});
     this.route('show', {path: '/post/:post_id'}, function() {
       this.route('comments', function() {
-        this.route('new');
+        this.route('new', {path: '/comment/new'});
       });
     });
-    this.route('edit', {path: '/post/edit/:post_id'});
   });
-  // this.route('post', {path: '/post/:post_id'}, function() {
-  //   this.route('comments', function() {
-  //     this.route('new');
-  //   });
-  // });
 });
 
 export default Router;

@@ -1,6 +1,17 @@
 I am a single post!
 <br>
 
+<ul>
+  <li>
+    {{model.image_url}}
+    <br>
+    {{model.name}}
+    <br>
+    {{model.caption}}
+  </li>
+</ul>
+<br>
+
 
 {{#link-to 'posts' class="button"}}
   Back
@@ -8,6 +19,6 @@ I am a single post!
 
 <br>
 
-{{#link-to 'posts.edit' class="button"}}
+{{#link-to 'posts.edit' model.id class="button"}}
   Edit
 {{/link-to}}
