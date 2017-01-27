@@ -1,1 +1,21 @@
 Here is where I can edit my post
+
+<br><br>
+
+<ul>
+  <li>
+    Picture URL: {{input type="text" id="new-pic" value=model.image_url}}
+    <br><br>
+    Name: {{input type="text" id="new-name" value=model.name}}
+    <br><br>
+    Caption: {{input type="text" id="new-caption" value=model.caption}}
+  </li>
+</ul>
+
+<br><br>
+
+<button {{action "updatePost"}}>Update</button>
+
+{{#link-to 'posts' class="button"}}
+  <button>Cancel</button>
+{{/link-to}}
