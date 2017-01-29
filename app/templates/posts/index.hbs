@@ -10,7 +10,8 @@ Click {{#link-to "posts.new"}}here{{/link-to}} to create a new post.
   {{#link-to "posts.show" post}}
     <ul>
       <li>
-        {{post.imageUrl}}
+        <img src={{post.imageUrl}}>
+
         <br>
         {{post.name}}
         <br>
