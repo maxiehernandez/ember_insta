@@ -1,18 +1,19 @@
 {{yield}}
 
-<ul>
-  <li>
-    Picture URL: {{input type="text" id="new-pic" value=imageUrl}}
-    <br><br>
-    Name: {{input type="text" id="new-name" value=name}}
-    <br><br>
-    Caption: {{input type="text" id="new-caption" value=caption}}
-  </li>
-</ul>
+<form id="NewPost">
+  <p>
+    Picture URL: {{input type="text" value=imageUrl}}
+  </p>
 
-<br><br><br><br>
+  <p>
+    Name: {{input type="text" value=name}}
+  </p>
 
+  <p>
+    Caption: {{input type="text" value=caption}}
+  </p>
 
-{{#link-to 'posts' class="button"}}<button>Back</button>{{/link-to}}
+  {{#link-to 'posts' class="button"}}<button>Back</button>{{/link-to}}
 
-<button {{action "newPost"}}>Submit</button>
+  <button {{action "newPost" imageUrl name caption}}>Submit</button>
+</form>
