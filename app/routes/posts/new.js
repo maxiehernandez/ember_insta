@@ -11,8 +11,7 @@ export default Ember.Route.extend({
         imageUrl: model.imageUrl,
         caption: model.caption
       });
-      post.save();
-      this.transitionTo('posts');
+      post.save().then(this.transitionTo('posts'));
     }
   }
 });
