@@ -1,22 +1,31 @@
-I am a single post!
-<br>
+<!-- I am a single post! -->
 
-<p>
-  {{model.name}}
-  <br>
-  <img src={{model.imageUrl}} class="image-size">
-</p>
-<p>
-  {{model.caption}}
-</p>
+<div class="col-sm-12 col-md-12">
+
+  <div class="col-sm-6 col-sm-offset-5 post-top-margin">
+    <div>
+      <img src={{model.imageUrl}} class="post-image">
+    </div>
+    <div>
+      Title: <strong>{{model.name}}</strong>
+    </div>
+    <div>
+      Caption: <strong>{{model.caption}}</strong>
+    </div>
 
 
-{{#link-to 'posts' class="button"}}
-  <button>Back</button>
-{{/link-to}}
 
-{{#link-to 'posts.edit' model.id class="button"}}
-  <button>Edit</button>
-{{/link-to}}
+    {{#link-to 'posts' class="btn btn-info"}}
+      Back
+    {{/link-to}}
 
-{{delete-post model=model deletePost="deletePost"}}
+    {{#link-to 'posts.edit' model.id class="btn btn-warning"}}
+      Edit
+    {{/link-to}}
+
+    <div class="btn btn-orange btn-white">
+      {{delete-post model=model deletePost="deletePost"}}
+    </div>
+
+  </div>
+</div>

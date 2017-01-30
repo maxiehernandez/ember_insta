@@ -1,22 +1,23 @@
-I am the post index - I show all the post.
+<!-- I am the post index - I show all the post. -->
 
-<br><br>
-
-Click {{#link-to "posts.new"}}here{{/link-to}} to create a new post.
+<div class="col-xs-12 alignleft post-top-margin" style="margin-bottom: 30px;">
+{{#link-to "posts.new" class="btn btn-info btn-white"}}New Post{{/link-to}}
+</div>
 
 <br><br><br><br>
 
 {{#each model as |post|}}
   {{#link-to "posts.show" post}}
-    <p>
-      {{post.name}}
-      <br>
-      <img src={{post.imageUrl}} class="image-size">
-    </p>
-    <p>
-      {{post.caption}}
-    </p>
-
-    <br><br><br><br>
+    <div class="col-xs-12 col-sm-6 col-md-4" style= "margin-bottom: 20px;">
+      <div>
+        <img src={{post.imageUrl}} class="post-image">
+      </div>
+      <div>
+        Title: <strong>{{post.name}}</strong>
+      </div>
+      <div>
+        Caption: <strong>{{post.caption}}</strong>
+      </div>
+    </div>
   {{/link-to}}
 {{/each}}

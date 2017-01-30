@@ -1,5 +1,93 @@
 @import "bootstrap";
 
-.image-size{
+.post-image{
   max-width: 300px;
+  min-height: 300px;
+  border-radius: 5px;
+}
+
+.post-top-margin {
+  margin-top: 30px; 
+}
+
+.alignleft {
+  text-decoration: none;
+  color: #3bc5ec;
+  padding-top: 2.2em;
+ }
+ .alignright {
+ 	float: right;
+  color: #3bc5ec;
+  font-family: Futura;
+  font-size: 30px;
+ }
+
+p {
+  color: #3bc5ec;
+  font-family: Futura;
+  font-size: 15px;
+}
+
+body {
+  background-color: white;
+}
+
+.index-image:hover {
+  cursor: pointer;
+}
+
+.btn-white {
+  color:white;
+}
+
+.btn-white:visited {
+  color:white;
+}
+
+.btn-orange {
+  color: #fff;
+  background-color: tomato;
+  border-color: tomato;
+}
+
+.btn-yellow {
+  color: #fff;
+  background-color: pink;
+  border-color: pink;
+}
+
+h1 {
+  font-family: "Century Gothic";
+  color: 	#3bc5ec;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 5em;
+  position: flex;
+}
+
+h2 {
+  font-family: "Century Gothic";
+  color: 	#383838 ;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 4.5em;
+  position: flex;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+
+tr {
+  font-family: "Century Gothic";
+  color: #3bc5ec;
+}
+
+td {
+  font-family: "Century Gothic";
+  color: #3bc5ec;
+}
+
+.newpost {
+  font-family: "Century Gothic";
+  color: #383838;
 }
