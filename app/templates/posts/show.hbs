@@ -19,4 +19,4 @@ I am a single post!
   <button>Edit</button>
 {{/link-to}}
 
-<button {{action "deletePost" model.imageUrl model.name model.caption}}>Delete</button>
+{{delete-post model=model deletePost="deletePost"}}

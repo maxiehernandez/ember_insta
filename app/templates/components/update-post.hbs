@@ -2,18 +2,18 @@
 
 <form id="UpdatePost">
   <p>
-    Picture URL: {{input type="text" value=imageUrl}}
+    Picture URL: {{input type="text" value=model.imageUrl}}
   </p>
 
   <p>
-    Name: {{input type="text" value=name}}
+    Name: {{input type="text" value=model.name}}
   </p>
 
   <p>
-    Caption: {{input type="text" value=caption}}
+    Caption: {{input type="text" value=model.caption}}
   </p>
 
   {{#link-to 'posts' class="button"}}<button>Cancel</button>{{/link-to}}
 
-  <button {{action "updatePost" imageUrl name caption}}>Update</button>
+  <button {{action "updatePost" model}}>Update</button>
 </form>

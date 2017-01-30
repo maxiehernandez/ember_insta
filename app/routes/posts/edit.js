@@ -6,12 +6,7 @@ export default Ember.Route.extend({
   },
   actions: {
     updatePost: function(model) {
-      let post = this.get('store').createRecord("post", {
-        name: model.name,
-        imageUrl: model.imageUrl,
-        caption: model.caption
-      });
-      post.save();
+      model.save();
       this.transitionTo('posts');
     }
   }

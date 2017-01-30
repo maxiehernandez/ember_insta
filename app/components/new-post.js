@@ -10,10 +10,7 @@ export default Ember.Component.extend({
         caption: caption
       };
       this.sendAction('newPost', model);
-
-      this.set('name', "");
-      this.set('imageUrl', "");
-      this.set('caption', "");
+      this.set({name: "", imageUrl: "", caption: ""});
     }
   }
 });
