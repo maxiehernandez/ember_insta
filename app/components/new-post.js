@@ -8,7 +8,7 @@ export default Ember.Component.extend({
         imageUrl: image,
         name: name,
         caption: caption
-      }
+      };
       this.sendAction('newPost', model);
 
       this.set('name', "");

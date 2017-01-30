@@ -8,7 +8,7 @@ export default Ember.Component.extend({
         imageUrl: image,
         name: name,
         caption: caption
-      }
+      };
 
       this.get('name');
       this.get('imageUrl');
@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       this.set('name', "");
       this.set('imageUrl', "");
       this.set('caption', "");
-      
+
       this.sendAction('updatePost', model);
     }
   }

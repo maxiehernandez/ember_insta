@@ -12,7 +12,7 @@ export default Ember.Route.extend({
         caption: model.caption
       });
       post.save();
-      this.transitionTo('posts')
+      this.transitionTo('posts');
     }
   }
 });
