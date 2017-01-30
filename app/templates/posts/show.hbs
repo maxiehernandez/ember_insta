@@ -1,16 +1,14 @@
 I am a single post!
 <br>
 
-<ul>
-  <li>
-    {{model.imageUrl}}
-    <br>
-    {{model.name}}
-    <br>
-    {{model.caption}}
-  </li>
-</ul>
-<br>
+<p>
+  {{model.name}}
+  <br>
+  <img src={{model.imageUrl}} class="image-size">
+</p>
+<p>
+  {{model.caption}}
+</p>
 
 
 {{#link-to 'posts' class="button"}}
@@ -20,3 +18,5 @@ I am a single post!
 {{#link-to 'posts.edit' model.id class="button"}}
   <button>Edit</button>
 {{/link-to}}
+
+<button {{action "deletePost" model.imageUrl model.name model.caption}}>Delete</button>

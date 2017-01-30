@@ -4,19 +4,19 @@ I am the post index - I show all the post.
 
 Click {{#link-to "posts.new"}}here{{/link-to}} to create a new post.
 
-<br><br>
+<br><br><br><br>
 
 {{#each model as |post|}}
   {{#link-to "posts.show" post}}
-    <ul>
-      <li>
-        <img src={{post.imageUrl}}>
+    <p>
+      {{post.name}}
+      <br>
+      <img src={{post.imageUrl}} class="image-size">
+    </p>
+    <p>
+      {{post.caption}}
+    </p>
 
-        <br>
-        {{post.name}}
-        <br>
-        {{post.caption}}
-      </li>
-    </ul>
+    <br><br><br><br>
   {{/link-to}}
 {{/each}}

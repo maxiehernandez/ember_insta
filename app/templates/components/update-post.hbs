@@ -1,0 +1,19 @@
+{{yield}}
+
+<form id="UpdatePost">
+  <p>
+    Picture URL: {{input type="text" value=imageUrl}}
+  </p>
+
+  <p>
+    Name: {{input type="text" value=name}}
+  </p>
+
+  <p>
+    Caption: {{input type="text" value=caption}}
+  </p>
+
+  {{#link-to 'posts' class="button"}}<button>Cancel</button>{{/link-to}}
+
+  <button {{action "updatePost" imageUrl name caption}}>Update</button>
+</form>
