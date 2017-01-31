@@ -7,7 +7,7 @@
 }
 
 .post-top-margin {
-  margin-top: 30px; 
+  margin-top: 30px;
 }
 
 .alignleft {
@@ -15,39 +15,21 @@
   color: #3bc5ec;
   padding-top: 2.2em;
  }
- .alignright {
- 	float: right;
-  color: #3bc5ec;
-  font-family: Futura;
-  font-size: 30px;
- }
-
-p {
-  color: #3bc5ec;
-  font-family: Futura;
-  font-size: 15px;
-}
 
 body {
-  background-color: white;
-}
-
-.index-image:hover {
-  cursor: pointer;
-}
-
-.btn-white {
-  color:white;
-}
-
-.btn-white:visited {
-  color:white;
+  background-color: #fff;
+  font-family: Futura;
 }
 
 .btn-orange {
   color: #fff;
   background-color: tomato;
   border-color: tomato;
+}
+.btn-orange:hover {
+  color: #fff;
+  background-color: #ff5233;
+  border-color: #ff3c1a;
 }
 
 .btn-yellow {
@@ -56,38 +38,63 @@ body {
   border-color: pink;
 }
 
-h1 {
-  font-family: "Century Gothic";
-  color: 	#3bc5ec;
-  font-weight: bolder;
-  text-align: center;
-  font-size: 5em;
-  position: flex;
-}
+// h1 {
+//   font-family: "Century Gothic";
+//   color: 	#3bc5ec;
+//   font-weight: bolder;
+//   text-align: center;
+//   font-size: 5em;
+//   position: flex;
+// }
+//
+// h2 {
+//   font-family: "Century Gothic";
+//   color: 	#383838 ;
+//   font-weight: bolder;
+//   text-align: center;
+//   font-size: 4.5em;
+//   position: flex;
+//   padding-top: 0.5em;
+//   padding-bottom: 0.5em;
+// }
+//
+//
+// tr {
+//   font-family: "Century Gothic";
+//   color: #3bc5ec;
+// }
+//
+// td {
+//   font-family: "Century Gothic";
+//   color: #3bc5ec;
+// }
+//
+//  .alignright {
+//  	float: right;
+//   color: #3bc5ec;
+//   font-family: Futura;
+//   font-size: 30px;
+//  }
+//
+// p {
+//   color: #3bc5ec;
+//   font-family: Futura;
+//   font-size: 15px;
+// }
+//
+// .newpost {
+//   font-family: "Century Gothic";
+//   color: #383838;
+// }
+// 
+// .index-image:hover {
+//   cursor: pointer;
+// }
 
-h2 {
-  font-family: "Century Gothic";
-  color: 	#383838 ;
-  font-weight: bolder;
-  text-align: center;
-  font-size: 4.5em;
-  position: flex;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-
-tr {
-  font-family: "Century Gothic";
-  color: #3bc5ec;
-}
-
-td {
-  font-family: "Century Gothic";
-  color: #3bc5ec;
-}
-
-.newpost {
-  font-family: "Century Gothic";
-  color: #383838;
-}
+// .btn-white {
+//   color:white;
+// }
+//
+// .btn-white:visited {
+//   color:white;
+// }
