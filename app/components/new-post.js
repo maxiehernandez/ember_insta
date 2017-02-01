@@ -3,14 +3,16 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service("store"),
   actions: {
-    newPost(image, name, caption) {
+    newPost(image, name, caption, thumbnail) {
       let model = {
         imageUrl: image,
         name: name,
-        caption: caption
+        caption: caption,
+        thumbnailImage: thumbnail
       };
       this.sendAction('newPost', model);
-      this.set({name: "", imageUrl: "", caption: ""});
+      const file = document.getElementById('file-field').files[0];
+      this.set({name: "", imageUrl: "", caption: "", thumbnailImage: file});
     }
   }
 });

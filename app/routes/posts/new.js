@@ -10,6 +10,7 @@ export default Ember.Route.extend({
         name: model.name,
         imageUrl: model.imageUrl,
         caption: model.caption
+        thumbnail: model.thumbnailImage
       });
       post.save().then(this.transitionTo('posts'));
     }
