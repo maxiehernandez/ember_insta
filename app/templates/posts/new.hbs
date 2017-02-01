@@ -1,9 +1,23 @@
 <!-- Here I will add a form to upload a new photo. -->
 
+
 <!-- trying to use ember-uploader addon -->
 
-<div class="col-sm-4 col-md-offset-4 post-top-margin">
-  Upload your picture
+<div class="row">
+  <div class="col-md-12">
+    {{file-uploader fileInputChanged="receiveFile" uploadProgress="uploadProgress"}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="uploaded-images">
+    {{#each asset in controller.assets}}
+      <div class="col-md-3">
+        {{uploaded-file file=asset}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
 </div>
 
 <!-- end of trying to use ember-uploader addon -->

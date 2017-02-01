@@ -1,19 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
-  model: function() {
-    return this.store.findAll('post');
-  },
+export default Ember.Controller.extend({
   assets: [],
-  actions: {
-    newPost: function(model) {
-      let post = this.get('store').createRecord("post", {
-        name: model.name,
-        imageUrl: model.imageUrl,
-        caption: model.caption
-      });
-      post.save().then(this.transitionTo('posts'));
-    },
+  actions:{
     receiveFile: function(file){
       var asset;
 
