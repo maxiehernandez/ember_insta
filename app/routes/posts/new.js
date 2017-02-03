@@ -2,16 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.findAll('post');
+    return this.get('store').createRecord("post", {
+      name: null,
+      imageUrl: null,
+      caption: null
+    })
   },
   actions: {
-    newPost: function(model) {
-      let post = this.get('store').createRecord("post", {
-        name: model.name,
-        imageUrl: model.imageUrl,
-        caption: model.caption
-      });
-      post.save().then(this.transitionTo('posts'));
+    createNewPost: function(newPost) {
+      let route = this;
+      newPost.save().then(function(data) {
+        route.transitionTo('posts');
+      })
     }
   }
 });

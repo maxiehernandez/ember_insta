@@ -44,6 +44,7 @@
   },
   "private": true,
   "dependencies": {
+    "blueimp-file-upload-node": "^2.1.0",
     "ember-cli": "^2.10.0"
   }
 }
