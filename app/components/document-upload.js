@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  store: Ember.inject.service("store"),
+  // store: Ember.inject.service("store"),
   // didInsertElement: function() {
   //   var self = this;
   //   this.$('#'+this.get('inputId')).fileupload({
@@ -27,7 +27,7 @@ export default Ember.Component.extend({
   actions: {
     uploadDocument() {
       $('#fileupload').fileupload({
-        method: 'POST',
+        type: 'POST',
         url: 'localhost:3000/documents'
       });
 
@@ -67,21 +67,24 @@ export default Ember.Component.extend({
       // }
       // } else {
       // Load existing files:
-      console.log("here ==============");
       $('#fileupload').addClass('fileupload-processing');
 
       $.ajax({
-        url: $('#fileupload').fileupload('option', 'url'),
-        data: {file: 'file goes here'},
+        url: 'localhost:3000/documents',
+        method: 'POST',
+        data: {file: 'insert file'},
         dataType: 'jsonp',
+        processData: false,
+        contentType: false,
         context: $('#fileupload')[0],
       }).always(function () {
         $(this).removeClass('fileupload-processing');
       }).done(function (result) {
+        console.log("here ==============");
         $(this).fileupload('option', 'done')
         .call(this, $.Event('done'), {result: result});
       });
-      // }
-    }
+      }
+    // }
   }
 });
