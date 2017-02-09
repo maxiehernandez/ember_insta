@@ -14,8 +14,13 @@ export default DS.JSONAPIAdapter.extend({
     hash = hash || {};
     hash.crossDomain = true;
     hash.xhrFields = {withCredentials: true};
-    hash.dataType = "jsonp";
+    // hash.dataType = "jsonp";
+    // hash.setRequestHeader("Content-Type", "jsonp");
 
     return this._super(url, method, hash);
-  }
+  },
+  handleResponse:function(status, headers, payload, requestData){
+    console.log("====================return", requestData, headers);
+    return this._super(...arguments);
+ }
 });
