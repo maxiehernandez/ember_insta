@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // store: Ember.inject.service("store"),
+  store: Ember.inject.service("store"),
   actions: {
     upload: function(event) {
       console.log('upload', event.srcElement.files);
@@ -16,7 +16,6 @@ export default Ember.Component.extend({
       formData.append("username", "Groucho");
       formData.append("accountnum", 123456);
       formData.append("userfile", postFile[0]);
-
 
       $.ajax({
         url: 'http://localhost:3000/documents',

@@ -20,7 +20,6 @@ export default DS.JSONAPIAdapter.extend({
     return this._super(url, method, hash);
   },
   handleResponse:function(status, headers, payload, requestData){
-    console.log("====================return", requestData, headers);
-    return this._super(...arguments);
+   return this._super(...arguments);
  }
 });
