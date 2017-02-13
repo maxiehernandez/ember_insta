@@ -1,7 +1,7 @@
 <br><br>
 
 <form enctype="multipart/form-data" class="upload-form" method="post">
-  <input id="fileupload" class="input_field" type="file" value="file" name="files[]" accept="audio/*|video/*|image/*|MIME_type"/>
+  <input class="input_field" onchange={{action "upload"}} type="file" name="files[]" accept="audio/*|video/*|image/*|MIME_type"/>
 </form>
 
 <button {{action "uploadDocument"}}>Save</button>

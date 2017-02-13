@@ -1,90 +1,31 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // store: Ember.inject.service("store"),
-  // didInsertElement: function() {
-  //   var self = this;
-  //   this.$('#'+this.get('inputId')).fileupload({
-  //       dataType: 'jsonp',
-  //       url: this.get('uploadUrl'),
-  //       formData: function() {
-  //           return [{name: self.get('hiddenName'), value: self.get('hiddenValue')}];
-  //       },
-  //       done: function(e, data) {
-  //           self.sendAction('uploaded', data.result);
-  //           self.markCompleted(data.result.filenames);
-  //       },
-  //       fail: function (e, data) {
-  //           self.sendAction('failed', data.result);
-  //       },
-  //       add: function(e, data) {
-  //           data.process().done(function () {
-  //               data.submit();
-  //           });
-  //       },
-  //   });
-  // },
+  store: Ember.inject.service("store"),
   actions: {
-    uploadDocument() {
-      $('#fileupload').fileupload({
-        type: 'POST',
-        url: 'localhost:3000/documents'
-      });
+    upload: function(event) {
+      console.log('upload', event.srcElement.files);
+      const component = this;
+      component.set("postFile", event.srcElement.files);
+    },
 
-      // // Enable iframe cross-domain access via redirect option:
-      // $('#fileupload').fileupload(
-      // 'option',
-      // 'redirect',
-      // window.location.href.replace(
-      //   /\/[^\/]*$/,
-      //   '/cors/result.html?%s'
-      // )
-      // );
-      //
-      // if (window.location.hostname === 'blueimp.github.io') {
-      // // Demo settings:
-      // $('#fileupload').fileupload('option', {
-      //   url: '//jquery-file-upload.appspot.com/',
-      //   // Enable image resizing, except for Android and Opera,
-      //   // which actually support image resizing, but fail to
-      //   // send Blob objects via XHR requests:
-      //   disableImageResize: /Android(?!.*Chrome)|Opera/
-      //   .test(window.navigator.userAgent),
-      //   maxFileSize: 999000,
-      //   acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
-      // });
-      // // Upload server status check for browsers with CORS support:
-      // if ($.support.cors) {
-      //   $.ajax({
-      //     url: '//jquery-file-upload.appspot.com/',
-      //     type: 'HEAD'
-      //   }).fail(function () {
-      //     $('<div class="alert alert-danger"/>')
-      //     .text('Upload server currently unavailable - ' +
-      //     new Date())
-      //     .appendTo('#fileupload');
-      //   });
-      // }
-      // } else {
-      // Load existing files:
-      $('#fileupload').addClass('fileupload-processing');
+    uploadDocument() {
+      const postFile = this.get("postFile");
+      console.log(postFile);
+      var formData = new FormData();
+      formData.append("username", "Groucho");
+      formData.append("accountnum", 123456);
+      formData.append("userfile", postFile[0]);
 
       $.ajax({
-        url: 'localhost:3000/documents',
+        url: 'http://localhost:3000/documents',
         method: 'POST',
-        data: {file: 'insert file'},
-        dataType: 'jsonp',
+        data: formData,
         processData: false,
         contentType: false,
-        context: $('#fileupload')[0],
-      }).always(function () {
-        $(this).removeClass('fileupload-processing');
       }).done(function (result) {
         console.log("here ==============");
-        $(this).fileupload('option', 'done')
-        .call(this, $.Event('done'), {result: result});
       });
-      }
-    // }
+    }
   }
 });

@@ -20,13 +20,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import('bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js');
-  app.import('bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js');
-  app.import('bower_components/blueimp-file-upload/js/cors/jquery.xdr-transport.js');
-  app.import('bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js');
-  app.import('bower_components/blueimp-file-upload/js/jquery.fileupload.js');
-  app.import('bower_components/blueimp-file-upload/js/jquery.fileupload-process.js');
-  app.import('bower_components/blueimp-file-upload/js/jquery.fileupload-image.js');
-
   return app.toTree();
 };
