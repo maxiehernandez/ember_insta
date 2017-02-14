@@ -8,7 +8,10 @@ export default Ember.Route.extend({
     deletePost: function(model) {
       model.destroyRecord();
       model.get('isDeleted');
-      model.save().then(this.transitionTo('posts'));
+      let route = this;
+      model.save().then(function(data) {
+        route.transitionTo('posts');
+      });
     }
   }
 });
