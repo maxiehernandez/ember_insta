@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function() {
     return this.get('store').createRecord("post", {
-      fileName: null,
+      name: null,
       imageUrl: null,
       caption: null
     });
