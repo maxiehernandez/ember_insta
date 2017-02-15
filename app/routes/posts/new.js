@@ -2,27 +2,24 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    let user = this.get('store').findRecord("user", 1).then(function(user){
+    let user = this.store.findRecord("user", 1)
+    user.then(function(user){
       return user;
     });
-
-    // console.log(user, user.get('username'), "is my user null?");
-    // user.get('posts').pushObject(user);
-    // user.save();
   },
   actions: {
     createNewPost: function(newPost) {
-      this.store.createRecord(newPost, {
-        imageUrl: imageUrl,
-        fileName: fileName,
-        caption: caption,
-        originalFileName: originalFileName,
-        fileContentType: fileContentType,
-        fileUpdatedAt: fileUpdatedAt,
+      console.log(newPost, "this is my new post route");
+      let user = this.store.peekRecord("user", 1);
+      const savePost = this.store.createRecord('post', {
+        imageUrl: newPost.imageUrl,
+        fileName: newPost.fileName,
+        caption: newPost.caption,
         user: user
       });
+      user.get('posts').pushObject(savePost);
       let route = this;
-      newPost.save().then(function(data) {
+      savePost.save().then(function(data) {
         route.transitionTo('posts');
       });
     }
