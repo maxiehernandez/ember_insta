@@ -9,7 +9,6 @@ export default Ember.Route.extend({
   },
   actions: {
     createNewPost: function(newPost) {
-      console.log(newPost, "this is my new post route");
       let user = this.store.peekRecord("user", 1);
       const savePost = this.store.createRecord('post', {
         imageUrl: newPost.imageUrl,

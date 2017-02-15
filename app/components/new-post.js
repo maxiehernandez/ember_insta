@@ -9,7 +9,6 @@ export default Ember.Component.extend({
         fileName: this.get('fileName'),
         caption: this.get('caption')
       }
-      console.log(newPost, "this is my new post Component");
       this.sendAction('createNewPost', newPost);
     }
   }
