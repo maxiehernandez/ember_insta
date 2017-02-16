@@ -10,15 +10,15 @@ export default Ember.Route.extend({
   actions: {
     createNewPost: function(newPost) {
       let user = this.store.peekRecord("user", 1);
-      const savePost = this.store.createRecord('post', {
+      const postCreation = this.store.createRecord('post', {
         imageUrl: newPost.imageUrl,
         fileName: newPost.fileName,
         caption: newPost.caption,
         user: user
       });
-      user.get('posts').pushObject(savePost);
+      user.get('posts').pushObject(postCreation);
       let route = this;
-      savePost.save().then(function(data) {
+      postCreation.save().then(function(data) {
         route.transitionTo('posts');
       });
     }
