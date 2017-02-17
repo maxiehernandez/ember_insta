@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
   actions: {
     deletePost: function(model) {
-      model.destroyRecord();
+      model.deleteRecord();
       model.get('isDeleted');
       let route = this;
       model.save().then(function(data) {

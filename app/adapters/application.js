@@ -10,17 +10,14 @@ export default DS.JSONAPIAdapter.extend({
     "X-CSRF-Token": "*"
   },
   host: host,
+  async: true,
   ajax: function(url, method, hash) {
     hash = hash || {};
     hash.crossDomain = true;
     hash.xhrFields = {withCredentials: true};
-    // hash.dataType = "jsonp";
-    // hash.setRequestHeader("Content-Type", "jsonp");
-
     return this._super(url, method, hash);
   },
   handleResponse:function(status, headers, payload, requestData){
-    console.log("====================return", requestData, headers);
-    return this._super(...arguments);
+   return this._super(...arguments);
  }
 });
