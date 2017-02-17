@@ -1,24 +1,23 @@
 <!-- I am the post index - I show all the post. -->
-{{search-filter}}
 
 <div class="text-center post-top-margin" style="margin-bottom: 30px;">
 {{#link-to "posts.new" class="btn btn-info btn-lg"}}New Post{{/link-to}}
 </div>
 
+
+<h3>Ember search</h3>
+{{post-filter}}
+
+<br><br><br><br>
+
+
+<h5>Rails search - not working ATM</h5>
+{{search-filter}}
+
 <br><br><br><br>
 
 {{#each model as |post|}}
   {{#link-to "posts.show" post}}
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center" style= "margin-bottom: 30px;">
-      <div>
-        <img src={{post.imageUrl}} class="post-image">
-      </div>
-      <div>
-        Title: <strong>{{post.fileName}}</strong>
-      </div>
-      <div>
-        Caption: <strong>{{post.caption}}</strong>
-      </div>
-    </div>
+    {{show-all-post post=post}}
   {{/link-to}}
 {{/each}}

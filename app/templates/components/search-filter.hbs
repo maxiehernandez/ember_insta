@@ -6,18 +6,22 @@
   </li>
 {{/if}}
 
-<div class='row'>
+<div class='row' style='margin-left:25px'>
   {{#each search.results as |result|}}
     <div class='col-xs-6 col-sm-4'>
+      inside a card
       <a href="{{result.link}}">
       <div class="card">
         <div class="card-header">
+          this should be post
+          {{result}}
+          {{debugger result.type}}
           {{result.type}}
         </div>
         <div class="card-block">
-          <h4 class="card-title">{{result.title}}</h4>
-          <p class="card-text">{{result.description}}</p>
-          <p class="card-text"><small class="text-muted">{{result.lastUpdated}}</small></p>
+          <h4 class="card-title">this should be title{{result.title}}</h4>
+          <p class="card-text">this should be caption{{result.description}}</p>
+          <p class="card-text"><small class="text-muted">time stamp{{result.lastUpdated}}</small></p>
         </div>
       </div>
       </a>
