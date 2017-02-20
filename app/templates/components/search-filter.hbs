@@ -1,10 +1,14 @@
 {{input name="query" value=query class="form-control" placeholder="Search for anything..."}}
 
+<br>
+
 {{#if search.noResults}}
   <li class='no-results list-unstyled'>
     No results for "<span>{{query}}</span>"
   </li>
 {{/if}}
+
+<br><br><br><br>
 
 {{#each posts as |post|}}
   {{#link-to "posts.show" post}}
