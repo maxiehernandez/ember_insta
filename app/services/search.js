@@ -18,6 +18,7 @@ export default Ember.Service.extend({
   }),
 
   results: Ember.computed('searchResults.[]', function() {
+    console.log((this.get('searchResults')).get("length"), "before results");
     return this.get('searchResults');
   }),
 
@@ -30,6 +31,7 @@ export default Ember.Service.extend({
     this.get('store').query('search', {
       q: this.get('searchValue')
     }).then((results) => {
+      console.log(results, "search results", results.get("length"));
       // check if the query results are empty
       if (results.get('length') > 0) {
         this.set('resultsEmpty', false);
@@ -37,6 +39,7 @@ export default Ember.Service.extend({
         this.set('resultsEmpty', true);
       }
       this.set('searchResults', results);
+      console.log((this.get('searchResults')).get("length"), "after search results");
     });
   })
 });

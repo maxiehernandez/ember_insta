@@ -6,21 +6,8 @@
   </li>
 {{/if}}
 
-<div class='row'>
-  {{#each search.results as |result|}}
-    <div class='col-xs-6 col-sm-4'>
-      <a href="{{result.link}}">
-      <div class="card">
-        <div class="card-header">
-          {{result.type}}
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">{{result.title}}</h4>
-          <p class="card-text">{{result.description}}</p>
-          <p class="card-text"><small class="text-muted">{{result.lastUpdated}}</small></p>
-        </div>
-      </div>
-      </a>
-    </div>
-  {{/each}}
-</div>
+{{#each posts as |post|}}
+  {{#link-to "posts.show" post}}
+    {{show-all-post post=post}}
+  {{/link-to}}
+{{/each}}
