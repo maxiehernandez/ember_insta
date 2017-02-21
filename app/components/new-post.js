@@ -10,13 +10,11 @@ export default Ember.Component.extend({
       method: 'POST',
       add(error, data){
         component.set('file', data);
-        console.log("new post file upload at", data);
       }
     });
   },
   actions: {
     createNewPost() {
-      console.log(this.get("file"), "file object in createNewPost");
       const newPost = {
         imageUrl: this.get('imageUrl'),
         fileName: this.get('fileName'),

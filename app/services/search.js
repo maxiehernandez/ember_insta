@@ -18,7 +18,6 @@ export default Ember.Service.extend({
   }),
 
   results: Ember.computed('searchResults.[]', function() {
-    console.log((this.get('searchResults')).get("length"), "before results");
     return this.get('searchResults');
   }),
 

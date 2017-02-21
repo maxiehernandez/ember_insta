@@ -8,5 +8,6 @@ export default DS.Model.extend({
   fileName: DS.attr('string'),
   fileContentType: DS.attr('string'),
   fileUpdatedAt: DS.attr('date'),
+  file: DS.attr('string'),
   imageUrl: DS.attr('string')
 });
