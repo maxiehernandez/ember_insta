@@ -8,6 +8,7 @@ export default Ember.Component.extend({
     $('#fileupload').fileupload({
       url: 'http://localhost:3000/posts',
       method: 'POST',
+      replaceFileInput: false,
       add(error, data){
         component.set('file', data);
       }
