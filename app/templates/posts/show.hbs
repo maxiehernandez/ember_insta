@@ -33,6 +33,19 @@
     </div>
     {{/each}}
   </div>
-  <div>{{#link-to 'posts.show.comments.new'}}Add comment{{/link-to}}</div>
 
+<br><br><br><br>
+  <form>
+    <div>
+      <label>Leave a Comment:</label>
+      <br>
+      <!-- {{textarea rows="4" value=model.comments.body}} -->
+      {{textarea rows="4" value=body}}
+    </div>
+
+    <div>
+      <button {{action 'createNewComment' body}}>Save</button>
+      <button {{action 'cancelComment'}}>Cancel</button>
+    </div>
+  </form>
 </div>
