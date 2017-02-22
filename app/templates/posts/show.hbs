@@ -1,31 +1,39 @@
 <!-- I am a single post! -->
 
-<!-- <div class="col-sm-12 col-md-12"> -->
-
-  <div class="text-center post-top-margin">
-    <div>
-      <img src={{model.imageUrl}} class="post-image">
-    </div>
-    <div>
-      Title: <strong>{{model.fileName}}</strong>
-    </div>
-    <div>
-      Caption: <strong>{{model.caption}}</strong>
-    </div>
-
-
-
-    {{#link-to 'posts' class="btn btn-info"}}
-      Back
-    {{/link-to}}
-
-    {{#link-to 'posts.edit' model.id class="btn btn-warning"}}
-      Edit
-    {{/link-to}}
-
-    <div class="btn btn-orange">
-      {{delete-post model=model deletePost="deletePost"}}
-    </div>
-
+<div class="text-center post-top-margin">
+  <div>
+    <img src={{model.imageUrl}} class="post-image">
   </div>
-<!-- </div> -->
+  <div>
+    Title: <strong>{{model.fileName}}</strong>
+  </div>
+  <div>
+    Caption: <strong>{{model.caption}}</strong>
+  </div>
+
+
+  <div>
+    <strong>Comments( {{model.comments.length}} ):</strong>
+    {{#each model.comments as |comment|}}
+      <div>
+        <p>{{comment.body}}</p>
+      </div>
+    {{/each}}
+  </div>
+  <div>{{#link-to 'posts.show.comments.new'}}Add comment{{/link-to}}</div>
+
+
+
+  {{#link-to 'posts' class="btn btn-info"}}
+    Back
+  {{/link-to}}
+
+  {{#link-to 'posts.edit' model.id class="btn btn-warning"}}
+    Edit
+  {{/link-to}}
+
+  <div class="btn btn-orange">
+    {{delete-post model=model deletePost="deletePost"}}
+  </div>
+
+</div>
