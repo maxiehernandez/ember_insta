@@ -12,18 +12,6 @@
   </div>
 
 
-  <div>
-    <strong>Comments( {{model.comments.length}} ):</strong>
-    {{#each model.comments as |comment|}}
-      <div>
-        <p>{{comment.body}}</p>
-      </div>
-    {{/each}}
-  </div>
-  <div>{{#link-to 'posts.show.comments.new'}}Add comment{{/link-to}}</div>
-
-
-
   {{#link-to 'posts' class="btn btn-info"}}
     Back
   {{/link-to}}
@@ -35,5 +23,16 @@
   <div class="btn btn-orange">
     {{delete-post model=model deletePost="deletePost"}}
   </div>
+
+<br><br>
+  <div>
+    {{#each model.comments as |comment|}}
+    <div>
+      <strong>{{comment.user.firstName}}:</strong>
+        <p>{{comment.body}}</p>
+    </div>
+    {{/each}}
+  </div>
+  <div>{{#link-to 'posts.show.comments.new'}}Add comment{{/link-to}}</div>
 
 </div>
