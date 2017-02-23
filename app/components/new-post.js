@@ -22,7 +22,6 @@ export default Ember.Component.extend({
         caption: this.get('caption'),
         file: this.get('file')
       }
-      console.log(newPost);
       this.sendAction('createNewPost', newPost);
     }
   }

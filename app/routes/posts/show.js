@@ -20,9 +20,6 @@ export default Ember.Route.extend({
     },
     createNewComment: function(body) {
       let post = this.controller.get('model');
-      let id = post.get('id');
-      console.log(id, "is this a post id?");
-      console.log(post, "controller getting model... should be body => ", body)
       let user = this.store.peekRecord("user", 1);
       const commentCreation = this.store.createRecord('comment', {
         body: body,

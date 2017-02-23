@@ -1,16 +1,31 @@
+{{input name="query" value=query class="form-control" placeholder="Search for anything..."}}
 
-<div class="col-xs-12 col-sm-6 col-md-4 text-center" style= "margin-bottom: 30px;">
-  <div>
-    {{#if post.file }}
-      <img src={{post.file}} class="post-image">
-    {{else if post.imageUrl }}
-      <img src={{post.imageUrl}} class="post-image">
-    {{/if}}
-  </div>
-  <div>
-    Title: <strong>{{post.fileName}}</strong>
-  </div>
-  <div>
-    Caption: <strong>{{post.caption}}</strong>
-  </div>
-</div>
+<br>
+
+{{#if search.noResults}}
+  <li class='no-results list-unstyled'>
+    No results for "<span>{{query}}</span>"
+  </li>
+{{/if}}
+
+<br><br><br><br>
+
+{{#each posts as |post|}}
+  {{#link-to "posts.show" post}}
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center" style= "margin-bottom: 30px;">
+      <div>
+        {{#if post.file }}
+          <img src={{post.file}} class="post-image">
+        {{else if post.imageUrl }}
+          <img src={{post.imageUrl}} class="post-image">
+        {{/if}}
+      </div>
+      <div>
+        Title: <strong>{{post.fileName}}</strong>
+      </div>
+      <div>
+        Caption: <strong>{{post.caption}}</strong>
+      </div>
+    </div>
+  {{/link-to}}
+{{/each}}
