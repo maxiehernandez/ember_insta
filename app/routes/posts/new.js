@@ -14,6 +14,7 @@ export default Ember.Route.extend({
         imageUrl: newPost.imageUrl,
         fileName: newPost.fileName,
         caption: newPost.caption,
+        file: newPost.file,
         user: user
       });
 

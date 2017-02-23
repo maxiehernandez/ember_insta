@@ -2,7 +2,11 @@
 
 <div class="text-center post-top-margin">
   <div>
-    <img src={{model.imageUrl}} class="post-image">
+    {{#if model.file }}
+      <img src={{model.file}} class="post-image">
+    {{else if model.imageUrl }}
+      <img src={{model.imageUrl}} class="post-image">
+    {{/if}}
   </div>
   <div>
     Title: <strong>{{model.fileName}}</strong>
@@ -44,8 +48,8 @@
     </div>
 
     <div>
-      <button {{action 'createNewComment' body}}>Save</button>
-      <button {{action 'cancelComment'}}>Cancel</button>
+      <button {{action 'createNewComment' body}} class="btn btn-success">Save</button>
+      <button {{action 'cancelComment' body}} class="btn btn-orange">Cancel</button>
     </div>
   </form>
 </div>

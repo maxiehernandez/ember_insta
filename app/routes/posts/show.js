@@ -4,6 +4,11 @@ export default Ember.Route.extend({
   model(params) {
     return this.get('store').find('post', params.post_id);
   },
+  emptyTextArea: Ember.on('activate', function(){
+    setTimeout(function(){
+      $(".ember-text-area").val("").focus();
+    },10)
+  }),
   actions: {
     deletePost: function(model) {
       model.deleteRecord();
@@ -26,9 +31,11 @@ export default Ember.Route.extend({
       });
       user.get('comments').pushObject(commentCreation);
       post.get('comments').pushObject(commentCreation);
-      commentCreation.save().then(() => {
-        this.transitionTo('post', post);
-      });
-    }
+      commentCreation.save();
+      $(".ember-text-area").val("").focus();
+    },
+    cancelComment(body) {
+     this.transitionTo('posts');
+   }
   }
 });
