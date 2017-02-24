@@ -20,19 +20,18 @@ export default Ember.Route.extend({
     },
     createNewComment: function(body) {
       let post = this.controller.get('model');
-      let user = this.store.peekRecord("user", 1);
+      let user = this.store.findRecord("user", 1);
       const commentCreation = this.store.createRecord('comment', {
         body: body,
         post: post,
         user: user
       });
-      user.get('comments').pushObject(commentCreation);
-      post.get('comments').pushObject(commentCreation);
       commentCreation.save();
       $(".ember-text-area").val("").focus();
     },
     cancelComment(body) {
      this.transitionTo('posts');
    }
-  }
+ }
+
 });

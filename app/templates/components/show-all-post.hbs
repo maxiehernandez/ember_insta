@@ -32,3 +32,79 @@
 
 
 <br><br><br>
+
+
+<div class="pagination-centered">
+  <ul class="pagination">
+    <li class="arrow"><a href="" {{action "prevPage"}}>&laquo;</a></li>
+    {{#if lastThreePages}}
+
+      <li class="unavailable">
+        <a href="">&hellip;</a>
+      </li>
+      <li>
+        {{#link-to "posts" (query-params page=metaData.prev_page)}}
+          {{metaData.prev_page}}
+        {{/link-to}}
+      </li>
+      <li class="current">
+        {{#link-to "posts" (query-params page=metaData.current_page)}}
+          {{metaData.current_page}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to "posts" (query-params page=metaData.next_page)}}
+          {{metaData.next_page}}
+        {{/link-to}}
+      </li>
+
+    {{else}}
+
+      {{#if metaData.prev_page}}
+      <li>
+        {{#link-to "posts" (query-params page=metaData.prev_page)}}
+          {{metaData.prev_page}}
+        {{/link-to}}
+      </li>
+      {{/if}}
+
+      <li class="current">
+        {{#link-to "posts" (query-params page=metaData.current_page)}}
+          {{metaData.current_page}}
+        {{/link-to}}
+      </li>
+
+      {{#if metaData.next_page}}
+        <li>
+          {{#link-to "posts" (query-params page=metaData.next_page)}}
+            {{metaData.next_page}}
+          {{/link-to}}
+        </li>
+        <li class="unavailable">
+          <a href="">&hellip;</a>
+        </li>
+        <li>
+          {{#link-to "posts" (query-params page=metaData.third_last)}}
+            {{metaData.third_last}}
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "posts" (query-params page=metaData.second_last)}}
+            {{metaData.second_last}}
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "posts" (query-params page=metaData.total_pages)}}
+            {{metaData.total_pages}}
+          {{/link-to}}
+        </li>
+      {{/if}}
+
+
+    {{/if}}
+
+
+    <li class="arrow"><a href="" {{action "nextPage"}}>&raquo;</a></li>
+  </ul>
+</div>
+{{outlet}}
