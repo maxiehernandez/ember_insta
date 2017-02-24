@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
     let meta = this.get('model.meta');
     meta['second_last'] = meta.total_pages - 1;
     meta['third_last'] = meta.total_pages - 2;
+    console.log(meta, "meta from metaData")
     return meta;
   }),
 
@@ -22,8 +23,7 @@ export default Ember.Controller.extend({
 
   actions: {
     nextPage() {
-
-      if (this.get('page') < this.get('metaData.total_pages')){
+      if (this.get('page') < this.get('metaData.total-pages')){
         let page = this.get('page');
         this.set('page', page + 1);
       }

@@ -12,11 +12,18 @@ export default Ember.Component.extend({
 
     // use the run loop to add a debounce
     Ember.run.debounce(this, function() {
-      // check if the query is at least 2 chars
-      // FT: should be able to filter one 1 char too
       if (this.get('query').length > 0) {
         this.set('posts', this.get('search.searchResults'));
       }
     }, 200);
   }),
+  actions: {
+    nextPage: function() {
+      this.get('nextPage')();
+    },
+
+    prevPage: function() {
+      this.get('prevPage')();
+    }
+  }
 });

@@ -4,5 +4,4 @@
 {{#link-to "posts.new" class="btn btn-info btn-lg"}}New Post{{/link-to}}
 </div>
 
-
-{{show-all-post posts=model}}
+{{show-all-post posts=model nextPage=(action "nextPage") prevPage=(action "prevPage")}}
