@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   queryParams: ['page', 'size'],
   page: 1,
-  size: 5,
+  size: 6,
 
   metaData: Ember.computed('model', function(){
     let meta = this.get('model.meta');

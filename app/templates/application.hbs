@@ -1,0 +1,28 @@
+<div class="app-content">
+  <nav class="navbar navbar-fixed-top navbar-styling">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{#link-to "posts" class="navbar-brand navbar-title-text-style"}}
+          Insta
+        {{/link-to}}
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to "posts" class="navbar-brand navbar-text-style"}}Home{{/link-to}}</li>
+          <li>{{#link-to "posts.new" class="navbar-brand navbar-text-style"}}New Post{{/link-to}}</li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="app-outlet">
+    {{outlet}}
+  </div>
+</div>

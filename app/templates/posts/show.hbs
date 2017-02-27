@@ -1,55 +1,59 @@
 <!-- I am a single post! -->
+<div class="col-sm-12 col-md-12 post-top-margin">
 
-<div class="text-center post-top-margin">
-  <div>
-    {{#if model.file }}
-      <img src={{model.file}} class="post-image">
-    {{else if model.imageUrl }}
-      <img src={{model.imageUrl}} class="post-image">
-    {{/if}}
+  <div class="col-sm-6">
+    <!-- <div class="text-center post-top-margin"> -->
+      <div>
+        {{#if model.file }}
+          <img src={{model.file}} class="post-image">
+        {{else if model.imageUrl }}
+          <img src={{model.imageUrl}} class="post-image">
+        {{/if}}
+      </div>
+      <div>
+        Title: <strong>{{model.fileName}}</strong>
+      </div>
+      <div>
+        Caption: <strong>{{model.caption}}</strong>
+      </div>
+
+
+      {{#link-to 'posts' class="btn btn-info"}}
+        Back
+      {{/link-to}}
+
+      {{#link-to 'posts.edit' model.id class="btn btn-warning"}}
+        Edit
+      {{/link-to}}
+
+      <div class="btn btn-orange">
+        {{delete-post model=model deletePost="deletePost"}}
+      </div>
+
+    <br><br>
+      <div>
+        {{#each model.comments as |comment|}}
+        <div>
+          <strong>{{comment.user.firstName}}:</strong>
+            <p>{{comment.body}}</p>
+        </div>
+        <!-- <button {{action 'deleteComment' body}} class="btn btn-success">Delete</button> -->
+        {{/each}}
+      </div>
+
+    <br><br><br><br>
+      <form>
+        <div>
+          <label>Leave a Comment:</label>
+          <br>
+          {{textarea rows="4" value=body class="form-control"}}
+        </div>
+
+        <div>
+          <button {{action 'createNewComment' body}} class="btn btn-success">Save</button>
+          <button {{action 'cancelComment' body}} class="btn btn-orange">Cancel</button>
+        </div>
+      </form>
+    <!-- </div> -->
   </div>
-  <div>
-    Title: <strong>{{model.fileName}}</strong>
-  </div>
-  <div>
-    Caption: <strong>{{model.caption}}</strong>
-  </div>
-
-
-  {{#link-to 'posts' class="btn btn-info"}}
-    Back
-  {{/link-to}}
-
-  {{#link-to 'posts.edit' model.id class="btn btn-warning"}}
-    Edit
-  {{/link-to}}
-
-  <div class="btn btn-orange">
-    {{delete-post model=model deletePost="deletePost"}}
-  </div>
-
-<br><br>
-  <div>
-    {{#each model.comments as |comment|}}
-    <div>
-      <strong>{{comment.user.firstName}}:</strong>
-        <p>{{comment.body}}</p>
-    </div>
-    <!-- <button {{action 'deleteComment' body}} class="btn btn-success">Delete</button> -->
-    {{/each}}
-  </div>
-
-<br><br><br><br>
-  <form>
-    <div>
-      <label>Leave a Comment:</label>
-      <br>
-      {{textarea rows="4" value=body}}
-    </div>
-
-    <div>
-      <button {{action 'createNewComment' body}} class="btn btn-success">Save</button>
-      <button {{action 'cancelComment' body}} class="btn btn-orange">Cancel</button>
-    </div>
-  </form>
 </div>

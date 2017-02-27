@@ -1,14 +1,34 @@
 @import "bootstrap";
 
-.post-image{
-  max-width: 300px;
+.post-image {
+  max-width: 100rem;
   min-height: 300px;
   max-height: 300px;
   border-radius: 5px;
 }
 
+.post-container {
+  margin-bottom: 30px;
+}
+
 .post-top-margin {
   margin-top: 30px;
+}
+
+.navbar-styling {
+  background: #3bc5ec;
+  border-color: #3bc5ec;
+}
+
+.navbar-title-text-style {
+  color: #fff;
+  font-size: 20px;
+}
+
+.navbar-text-style {
+  font-size: 15px !important;
+  color: white;
+  margin-left: -8px !important;
 }
 
 .alignleft {
@@ -37,4 +57,33 @@ body {
   color: #fff;
   background-color: pink;
   border-color: pink;
+}
+
+.app-content {
+  padding-top: 50px;
+  background: #fff;
+}
+
+.search-bar-position {
+  margin-top: 8px;
+  margin-right: 10px;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.form-control {
+  border-radius: 2px;
+}
+
+.form-box {
+  min-height: 500px;
+  margin-top: 50px;
+  background: #3bc5ec;
+}
+
+.form-top-margin {
+  padding-top: 100px;
 }

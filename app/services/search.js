@@ -21,7 +21,7 @@ export default Ember.Service.extend({
     return this.get('searchResults');
   }),
 
-  _fetchSearchResults: Ember.observer('searchValue', function() {
+  fetchSearchResults: Ember.observer('searchValue', function() {
     // exit without making a reqeust if value cast is empty
     if (Ember.isBlank(this.get('searchValue'))) {
       return [];

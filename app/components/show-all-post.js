@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   query: null,
 
-  _valueChanged: Ember.observer('query', function() {
+  valueChanged: Ember.observer('query', function() {
     // FT: this need to happen before debounce, so you have enough time to wait for filter results come back
     // FT: In general, this is a bad practice. Hard-time waiting is always a bad idea since it can cause user experiance issue. Dont use unless it is absolutly necessary
     this.set('search.searchValue', this.get('query'));
