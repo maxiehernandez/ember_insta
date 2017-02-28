@@ -9,17 +9,7 @@ export default Ember.Controller.extend({
     let meta = this.get('model.meta');
     meta['second_last'] = meta.total_pages - 1;
     meta['third_last'] = meta.total_pages - 2;
-    console.info(meta, "meta from metaData")
-    var newMeta = {
-            current_page: meta['current-page'],
-            next_page: meta["next-page"],
-            prev_page: meta['prev-page'],
-            second_last: meta.total_pages - 1,
-            third_last: meta.total_pages - 2,
-            total_pages: meta['total-pages'],
-            total_count: meta['total-count']
-          }
-    return newMeta;
+    return meta;
   }),
 
   lastThreePages: Ember.computed('model', function(){

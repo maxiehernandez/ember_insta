@@ -1,6 +1,3 @@
-<!-- Here is where I can edit my post -->
-
-<br><br>
 
 <div class="container">
   <div class="form-box col-md-6 col-md-offset-3 form-top-margin">
@@ -12,22 +9,20 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Name</label>
+        <label class="col-sm-2 control-label form-text">Name</label>
         <div class="col-sm-10">
           {{input class="form-control" type="text" value=model.fileName}}
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Caption</label>
+        <label class="col-sm-2 control-label form-text">Caption</label>
         <div class="col-sm-10">
           {{input class="form-control" type="text" value=model.caption}}
         </div>
       </div>
-
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           {{#link-to 'posts' class="btn btn-grey" }}Cancel{{/link-to}}
-
           <div class="btn btn-grey">
             {{update-post model=model updatePost="updatePost"}}
           </div>

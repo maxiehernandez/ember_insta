@@ -1,6 +1,5 @@
 import DS from "ember-data";
 
-// let underscore = Ember.String.underscore;
 var host='http://localhost:3000';
 
 

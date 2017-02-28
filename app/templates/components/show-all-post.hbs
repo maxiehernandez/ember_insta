@@ -1,16 +1,12 @@
 {{input name="query" value=query class="form-control search-bar-position" placeholder="Search for anything..."}}
 
-<br>
-
 {{#if search.noResults}}
-  <li class='no-results list-unstyled'>
+  <li class='no-results list-unstyled margin-top-20'>
     No results for "<span>{{query}}</span>"
   </li>
 {{/if}}
 
-<br><br><br><br>
-
-<div class="row image-view-row">
+<div class="row image-view-row margin-top-20">
   {{#each posts as |post|}}
     {{#link-to "posts.show" post}}
       <div class="col-sm-4 col-md-4" style= "margin-bottom: 30px; max-height: 300px; height: 300px">
@@ -40,7 +36,6 @@
     <ul class="pagination">
       <li class="arrow"><a href="" {{action "prevPage"}}>&laquo;</a></li>
       {{#if lastThreePages}}
-
         <!-- <li class="unavailable">
           <a href="">&hellip;</a>
         </li> -->
@@ -64,6 +59,7 @@
           {{/link-to}}
         </li>
         {{/if}}
+
       {{else}}
 
         {{#if metaData.prev_page}}
@@ -105,8 +101,6 @@
             {{/link-to}}
           </li>
         {{/if}}
-
-
       {{/if}}
 
       <li class="arrow">
