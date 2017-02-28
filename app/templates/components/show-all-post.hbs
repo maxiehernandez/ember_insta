@@ -23,43 +23,16 @@
             {{/if}}
           </div>
         </div>
-        <div>
+        <div class="font-color">
           Title: <strong>{{post.fileName}}</strong>
         </div>
-        <div>
+        <div class="font-color">
           Caption: <strong>{{post.caption}}</strong>
         </div>
       </div>
     {{/link-to}}
   {{/each}}
 </div>
-
-
-<!--
-
-
-
-<div class="row">
-  <div class="card-deck card-deck-margin"  style="width: 100rem;">
-    {{#each posts as |post|}}
-      {{#link-to "posts.show" post}}
-        <div class="card col-md-4">
-          {{#if post.file }}
-            <img class="card-img-top post-image" src="{{post.file}}">
-          {{else if post.imageUrl }}
-            <img class="card-img-top post-image" src="{{post.imageUrl}}">
-          {{/if}}
-          <div class="card-block">
-            <h4 class="card-title">{{post.fileName}}</h4>
-            <p class="card-text">{{post.caption}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      {{/link-to}}
-    {{/each}}
-  </div>
-</div> -->
-
 
 
 <div class="row">

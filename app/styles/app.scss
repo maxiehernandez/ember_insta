@@ -19,16 +19,24 @@
 }
 
 .image-container-block {
-  min-height: 260px
+  min-height: 260px;
 }
 
 .image-container {
   max-width: 350px;
 }
 
+.font-color {
+  color: #566270;
+}
+
 .post-image {
   max-width: 100%;
   max-height: 240px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .post-container {
@@ -40,47 +48,60 @@
 }
 
 .navbar-styling {
-  background: #3bc5ec;
-  border-color: #3bc5ec;
+  background: #60c5ba;
+  border-color: #60c5ba;
 }
 
 .navbar-title-text-style {
   color: #fff;
   font-size: 20px;
+  &:hover, &:active, &:focus{
+    color: #fff;
+  }
 }
 
 .navbar-text-style {
   font-size: 15px !important;
   color: white;
   margin-left: -8px !important;
+  &:hover, &:active, &:focus{
+    color: #566270;
+  }
 }
-
-.alignleft {
-  text-decoration: none;
-  color: #3bc5ec;
-  padding-top: 2.2em;
- }
 
 body {
   background-color: #fff;
   font-family: Work Sans;
+  color: #566270;
 }
 
-.btn-orange {
-  color: #fff;
-  background-color: tomato;
-  border-color: tomato;
-}
-.btn-orange:hover {
-  color: #fff;
-  background-color: #ff5233;
-  border-color: #ff3c1a;
+.pagination > li > a {
+  color: #566270;
 }
 
-.btn-yellow {
+.btn-grey {
   color: #fff;
-  background-color: pink;
-  border-color: pink;
+  background-color: #a3a1a1;
+  border-color: #a3a1a1;
+  border-radius: 1px;
+  margin: 2px;
+  &:hover{
+    color: #fff;
+    background-color: #8b8687;
+    border-color: #8b8687;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    transform: scale(1.1);
+  }
 }
 
 .app-content {
@@ -105,7 +126,7 @@ body {
 .form-box {
   min-height: 500px;
   margin-top: 50px;
-  background: #3bc5ec;
+  background: #60c5ba;
 }
 
 .form-top-margin {
@@ -122,7 +143,7 @@ body {
 }
 
 .inner-content {
-  background-color: #3bc5ec;
+  background-color: #60c5ba;
   max-width: 40%;
   border-radius: 5px;
   padding: 10px;
@@ -140,20 +161,20 @@ body {
   position: absolute;
   border-style: solid;
   border-width: 0 7px 10px;
-  border-color: #3bc5ec transparent;
+  border-color: #60c5ba transparent;
   display: block;
   width: 0;
   z-index: 1;
   top: -10px;
   left: 15px;
-  color: #3bc5ec;
+  color: #60c5ba;
 }
 
 .scrolling-comments {
   width: 100%;
   max-height: 302px;
   height: 302px;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -164,6 +185,10 @@ body {
 .edit-page-image {
   max-width: 100%;
   max-height: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .comments-edie-div {
@@ -172,4 +197,18 @@ body {
 
 .title-div {
   margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
