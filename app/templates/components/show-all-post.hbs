@@ -6,109 +6,110 @@
   </li>
 {{/if}}
 
-<div class="row image-view-row margin-top-20">
-  {{#each posts as |post|}}
-    {{#link-to "posts.show" post}}
-      <div class="col-sm-4 col-md-4" style= "margin-bottom: 30px; max-height: 300px; height: 300px">
-        <div class="image-container-block">
-          <div class="image-container">
-            {{#if post.file }}
-              <img src={{post.file}} class="post-image">
-            {{else if post.imageUrl }}
-              <img src={{post.imageUrl}} class="post-image">
-            {{/if}}
+<div class="container">
+  <div class="row image-view-row margin-top-20">
+    {{#each posts as |post|}}
+      {{#link-to "posts.show" post}}
+        <div class="col-sm-4 col-md-4" style="margin-bottom: 30px; max-height: 300px; height: 300px">
+          <div class="image-container-block">
+            <div class="image-container">
+              {{#if post.file }}
+                <img src= {{post.file}} class="post-image"> {{else if post.imageUrl }}
+                <img src= {{post.imageUrl}} class="post-image">
+              {{/if}}
+            </div>
+          </div>
+          <div class="font-color">
+            Title: <strong>{{post.fileName}}</strong>
+          </div>
+          <div class="font-color">
+            Caption: <strong>{{post.caption}}</strong>
           </div>
         </div>
-        <div class="font-color">
-          Title: <strong>{{post.fileName}}</strong>
-        </div>
-        <div class="font-color">
-          Caption: <strong>{{post.caption}}</strong>
-        </div>
-      </div>
-    {{/link-to}}
-  {{/each}}
-</div>
+      {{/link-to}}
+    {{/each}}
+  </div>
 
 
-<div class="row">
-  <div class="pagination-centered text-center">
-    <ul class="pagination">
-      <li class="arrow"><a href="" {{action "prevPage"}}>&laquo;</a></li>
-      {{#if lastThreePages}}
-        <!-- <li class="unavailable">
+  <div class="row">
+    <div class="pagination-centered text-center">
+      <ul class="pagination">
+        <li class="arrow"><a href="" {{action "prevPage"}}>&laquo;</a></li>
+        {{#if lastThreePages}}
+          <!-- <li class="unavailable">
           <a href="">&hellip;</a>
         </li> -->
-        {{#if metaData.prev_page}}
-        <li>
-          {{#link-to "posts" (query-params page=metaData.prev_page)}}
-            {{metaData.prev_page}}
-          {{/link-to}}
-        </li>
+          {{#if metaData.prev_page}}
+            <li>
+              {{#link-to "posts" (query-params page=metaData.prev_page)}}
+                {{metaData.prev_page}}
+              {{/link-to}}
+            </li>
+          {{/if}}
+
+          <li class="current">
+            {{#link-to "posts" (query-params page=metaData.current_page)}}
+              {{metaData.current_page}}
+            {{/link-to}}
+          </li>
+          {{#if metaData.next_page}}
+            <li>
+              {{#link-to "posts" (query-params page=metaData.next_page)}}
+                {{metaData.next_page}}
+              {{/link-to}}
+            </li>
+          {{/if}}
+
+        {{else}}
+
+          {{#if metaData.prev_page}}
+            <li>
+              {{#link-to "posts" (query-params page=metaData.prev_page)}}
+                {{metaData.prev_page}}
+              {{/link-to}}
+            </li>
+          {{/if}}
+
+          <li class="current">
+            {{#link-to "posts" (query-params page=metaData.current_page)}}
+              {{metaData.current_page}}
+            {{/link-to}}
+          </li>
+
+          {{#if metaData.next_page}}
+            <li>
+              {{#link-to "posts" (query-params page=metaData.next_page)}}
+                {{metaData.next_page}}
+              {{/link-to}}
+            </li>
+            <li class="unavailable">
+              <a href="">&hellip;</a>
+            </li>
+            <li>
+              {{#link-to "posts" (query-params page=metaData.third_last)}}
+                {{metaData.third_last}}
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to "posts" (query-params page=metaData.second_last)}}
+                {{metaData.second_last}}
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to "posts" (query-params page=metaData.total_pages)}}
+                {{metaData.total_pages}}
+              {{/link-to}}
+            </li>
+          {{/if}}
         {{/if}}
 
-        <li class="current">
-          {{#link-to "posts" (query-params page=metaData.current_page)}}
-            {{metaData.current_page}}
-          {{/link-to}}
-        </li>
-        {{#if metaData.next_page}}
-        <li>
+        <li class="arrow">
           {{#link-to "posts" (query-params page=metaData.next_page)}}
-            {{metaData.next_page}}
+            &raquo;
           {{/link-to}}
         </li>
-        {{/if}}
-
-      {{else}}
-
-        {{#if metaData.prev_page}}
-        <li>
-          {{#link-to "posts" (query-params page=metaData.prev_page)}}
-            {{metaData.prev_page}}
-          {{/link-to}}
-        </li>
-        {{/if}}
-
-        <li class="current">
-          {{#link-to "posts" (query-params page=metaData.current_page)}}
-            {{metaData.current_page}}
-          {{/link-to}}
-        </li>
-
-        {{#if metaData.next_page}}
-          <li>
-            {{#link-to "posts" (query-params page=metaData.next_page)}}
-              {{metaData.next_page}}
-            {{/link-to}}
-          </li>
-          <li class="unavailable">
-            <a href="">&hellip;</a>
-          </li>
-          <li>
-            {{#link-to "posts" (query-params page=metaData.third_last)}}
-              {{metaData.third_last}}
-            {{/link-to}}
-          </li>
-          <li>
-            {{#link-to "posts" (query-params page=metaData.second_last)}}
-              {{metaData.second_last}}
-            {{/link-to}}
-          </li>
-          <li>
-            {{#link-to "posts" (query-params page=metaData.total_pages)}}
-              {{metaData.total_pages}}
-            {{/link-to}}
-          </li>
-        {{/if}}
-      {{/if}}
-
-      <li class="arrow">
-        {{#link-to "posts" (query-params page=metaData.next_page)}}
-          &raquo;
-        {{/link-to}}
-      </li>
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>
 {{outlet}}
