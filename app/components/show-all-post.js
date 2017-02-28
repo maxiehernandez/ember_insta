@@ -18,7 +18,8 @@ export default Ember.Component.extend({
     }, 200);
   }),
   actions: {
-    nextPage: function() {
+    nextPage: function(next) {
+      console.info(next)
       this.get('nextPage')();
     },
 

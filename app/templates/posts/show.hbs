@@ -1,21 +1,23 @@
 <!-- I am a single post! -->
 <div class="col-sm-12 col-md-12 post-top-margin">
 
-  <div class="col-sm-6">
+  <div class="col-sm-5 margin-top-20">
     <!-- <div class="text-center post-top-margin"> -->
+    <div class="edit-image-wrapper">
       <div>
         {{#if model.file }}
-          <img src={{model.file}} class="post-image">
+          <img src={{model.file}} class="edit-page-image">
         {{else if model.imageUrl }}
-          <img src={{model.imageUrl}} class="post-image">
+          <img src={{model.imageUrl}} class="edit-page-image">
         {{/if}}
       </div>
-      <div>
+      <div class="title-div">
         Title: <strong>{{model.fileName}}</strong>
       </div>
       <div>
         Caption: <strong>{{model.caption}}</strong>
       </div>
+    </div>
 
 
       {{#link-to 'posts' class="btn btn-info"}}
@@ -29,21 +31,22 @@
       <div class="btn btn-orange">
         {{delete-post model=model deletePost="deletePost"}}
       </div>
+    </div>
 
-    <br><br>
-      <div>
+    <div class="col-sm-7 comments-edie-div margin-top-20">
+      <div class="scrolling-comments">
         {{#each model.comments as |comment|}}
         <div>
-          <strong>{{comment.user.firstName}}:</strong>
-            <p>{{comment.body}}</p>
+          <strong>{{comment.user.firstName}}</strong>
+            <p class="inner-content">{{comment.body}}</p>
         </div>
         <!-- <button {{action 'deleteComment' body}} class="btn btn-success">Delete</button> -->
         {{/each}}
       </div>
 
-    <br><br><br><br>
+    <br>
       <form>
-        <div>
+        <div class="leave-comment-box">
           <label>Leave a Comment:</label>
           <br>
           {{textarea rows="4" value=body class="form-control"}}

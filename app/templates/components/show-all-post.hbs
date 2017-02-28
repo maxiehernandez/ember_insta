@@ -10,22 +10,18 @@
 
 <br><br><br><br>
 
-
-
-
-
-
-
-<div class="row">
+<div class="row image-view-row">
   {{#each posts as |post|}}
     {{#link-to "posts.show" post}}
-      <div class="col-sm-4 col-md-4" style= "margin-bottom: 30px;">
-        <div>
-          {{#if post.file }}
-            <img src={{post.file}} class="post-image">
-          {{else if post.imageUrl }}
-            <img src={{post.imageUrl}} class="post-image">
-          {{/if}}
+      <div class="col-sm-4 col-md-4" style= "margin-bottom: 30px; max-height: 300px; height: 300px">
+        <div class="image-container-block">
+          <div class="image-container">
+            {{#if post.file }}
+              <img src={{post.file}} class="post-image">
+            {{else if post.imageUrl }}
+              <img src={{post.imageUrl}} class="post-image">
+            {{/if}}
+          </div>
         </div>
         <div>
           Title: <strong>{{post.fileName}}</strong>
@@ -39,11 +35,11 @@
 </div>
 
 
+<!--
 
 
 
-
-<!-- <div class="row">
+<div class="row">
   <div class="card-deck card-deck-margin"  style="width: 100rem;">
     {{#each posts as |post|}}
       {{#link-to "posts.show" post}}
@@ -66,96 +62,35 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="row">
   <div class="pagination-centered text-center">
     <ul class="pagination">
       <li class="arrow"><a href="" {{action "prevPage"}}>&laquo;</a></li>
       {{#if lastThreePages}}
 
-        <li class="unavailable">
+        <!-- <li class="unavailable">
           <a href="">&hellip;</a>
-        </li>
+        </li> -->
+        {{#if metaData.prev_page}}
         <li>
           {{#link-to "posts" (query-params page=metaData.prev_page)}}
             {{metaData.prev_page}}
           {{/link-to}}
         </li>
+        {{/if}}
+
         <li class="current">
           {{#link-to "posts" (query-params page=metaData.current_page)}}
             {{metaData.current_page}}
           {{/link-to}}
         </li>
+        {{#if metaData.next_page}}
         <li>
           {{#link-to "posts" (query-params page=metaData.next_page)}}
             {{metaData.next_page}}
           {{/link-to}}
         </li>
-
+        {{/if}}
       {{else}}
 
         {{#if metaData.prev_page}}
@@ -201,8 +136,11 @@
 
       {{/if}}
 
-
-      <li class="arrow"><a href="" {{action "nextPage"}}>&raquo;</a></li>
+      <li class="arrow">
+        {{#link-to "posts" (query-params page=metaData.next_page)}}
+          &raquo;
+        {{/link-to}}
+      </li>
     </ul>
   </div>
 </div>
