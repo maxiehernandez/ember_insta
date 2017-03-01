@@ -17,7 +17,6 @@ export default Ember.Component.extend({
   }),
   actions: {
     nextPage: function(next) {
-      console.info(next)
       this.get('nextPage')();
     },
     prevPage: function() {

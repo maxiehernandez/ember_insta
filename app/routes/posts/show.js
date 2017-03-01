@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   emptyTextArea: Ember.on('activate', function(){
     setTimeout(function(){
       $(".ember-text-area").val("").focus();
-    },10)
+    })
   }),
   actions: {
     deletePost: function(model) {
@@ -29,8 +29,8 @@ export default Ember.Route.extend({
       commentCreation.save();
       $(".ember-text-area").val("").focus();
     },
-    cancelComment(body) {
-     this.transitionTo('posts');
+    cancelComment() {
+      $(".ember-text-area").val("").focus();
    }
  }
 });

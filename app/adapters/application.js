@@ -1,6 +1,6 @@
 import DS from "ember-data";
 
-var host='http://localhost:3000';
+const host='http://localhost:3000';
 
 
 //BY DEFAULT this code is not doing anything.  It will be set up to capture the CSRF token from Devise and attach it to outgoing requests.
