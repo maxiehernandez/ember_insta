@@ -39,47 +39,47 @@
           <!-- <li class="unavailable">
           <a href="">&hellip;</a>
         </li> -->
-          {{#if metaData.prev_page}}
+          {{#if metaData.prevPage}}
             <li>
-              {{#link-to "posts" (query-params page=metaData.prev_page)}}
-                {{metaData.prev_page}}
+              {{#link-to "posts" (query-params page=metaData.prevPage)}}
+                {{metaData.prevPage}}
               {{/link-to}}
             </li>
           {{/if}}
 
           <li class="current">
-            {{#link-to "posts" (query-params page=metaData.current_page)}}
-              {{metaData.current_page}}
+            {{#link-to "posts" (query-params page=metaData.currentPage)}}
+              {{metaData.currentPage}}
             {{/link-to}}
           </li>
-          {{#if metaData.next_page}}
+          {{#if metaData.nextPage}}
             <li>
-              {{#link-to "posts" (query-params page=metaData.next_page)}}
-                {{metaData.next_page}}
+              {{#link-to "posts" (query-params page=metaData.nextPage)}}
+                {{metaData.nextPage}}
               {{/link-to}}
             </li>
           {{/if}}
 
         {{else}}
 
-          {{#if metaData.prev_page}}
+          {{#if metaData.prevPage}}
             <li>
-              {{#link-to "posts" (query-params page=metaData.prev_page)}}
-                {{metaData.prev_page}}
+              {{#link-to "posts" (query-params page=metaData.prevPage)}}
+                {{metaData.prevPage}}
               {{/link-to}}
             </li>
           {{/if}}
 
           <li class="current">
-            {{#link-to "posts" (query-params page=metaData.current_page)}}
-              {{metaData.current_page}}
+            {{#link-to "posts" (query-params page=metaData.currentPage)}}
+              {{metaData.currentPage}}
             {{/link-to}}
           </li>
 
-          {{#if metaData.next_page}}
+          {{#if metaData.nextPage}}
             <li>
-              {{#link-to "posts" (query-params page=metaData.next_page)}}
-                {{metaData.next_page}}
+              {{#link-to "posts" (query-params page=metaData.nextPage)}}
+                {{metaData.nextPage}}
               {{/link-to}}
             </li>
             <li class="unavailable">
@@ -96,15 +96,15 @@
               {{/link-to}}
             </li>
             <li>
-              {{#link-to "posts" (query-params page=metaData.total_pages)}}
-                {{metaData.total_pages}}
+              {{#link-to "posts" (query-params page=metaData.totalPages)}}
+                {{metaData.totalPages}}
               {{/link-to}}
             </li>
           {{/if}}
         {{/if}}
 
         <li class="arrow">
-          {{#link-to "posts" (query-params page=metaData.next_page)}}
+          {{#link-to "posts" (query-params page=metaData.nextPage)}}
             &raquo;
           {{/link-to}}
         </li>

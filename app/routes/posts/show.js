@@ -19,8 +19,8 @@ export default Ember.Route.extend({
       });
     },
     createNewComment: function(body) {
-      let post = this.controller.get('model');
-      let user = this.store.findRecord("user", 1);
+      const post = this.controller.get('model');
+      const user = this.store.findRecord("user", 1);
       const commentCreation = this.store.createRecord('comment', {
         body: body,
         post: post,

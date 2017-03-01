@@ -10,13 +10,13 @@ export default Ember.Controller.extend({
     meta['second_last'] = meta.total_pages - 1;
     meta['third_last'] = meta.total_pages - 2;
     var newMeta = {
-      current_page: meta['current-page'],
-      next_page: meta["next-page"],
-      prev_page: meta['prev-page'],
-      second_last: meta.total_pages - 1,
-      third_last: meta.total_pages - 2,
-      total_pages: meta['total-pages'],
-      total_count: meta['total-count']		
+      currentPage: meta['current-page'],
+      nextPage: meta["next-page"],
+      prevPage: meta['prev-page'],
+      secondLast: meta.total_pages - 1,
+      thirdLast: meta.total_pages - 2,
+      totalPages: meta['total-pages'],
+      totalCount: meta['total-count']
      }
      return newMeta;
   }),
