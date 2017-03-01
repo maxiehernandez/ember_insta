@@ -22,14 +22,15 @@ export default Ember.Route.extend({
         newPost.file.formData = {
           data: JSON.stringify(postCreation.serialize().data)
         }
-        newPost.file.submit().then(function(data){
+        newPost.file.submit().then(function() {
+          this.transitionTo('posts');
         });
       }else {
         user.get('posts').pushObject(postCreation);
-        postCreation.save().then(function(data) {
+        postCreation.save().then(function() {
+          this.transitionTo('posts');
         });
       }
-      this.transitionTo('posts');
     }
   }
 });
