@@ -9,7 +9,8 @@ export default Ember.Route.extend({
   },
   actions: {
     createNewPost: function(newPost) {
-      let user = this.store.peekRecord("user", 1);
+      let route = this,
+          user = this.store.peekRecord("user", 1);
       const postCreation = this.store.createRecord('post', {
         imageUrl: newPost.imageUrl,
         fileName: newPost.fileName,
@@ -22,13 +23,13 @@ export default Ember.Route.extend({
         newPost.file.formData = {
           data: JSON.stringify(postCreation.serialize().data)
         }
-        newPost.file.submit().then(function() {
-          this.transitionTo('posts');
+        newPost.file.submit().then(function(objectAfterSave) {
+          this.transitionTo('/post/' + objectAfterSave.id);
         });
       }else {
         user.get('posts').pushObject(postCreation);
-        postCreation.save().then(function() {
-          this.transitionTo('posts');
+        postCreation.save().then(function(objectAfterSave) {
+          route.transitionTo('/post/' + objectAfterSave.id);
         });
       }
     }

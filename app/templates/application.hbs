@@ -18,7 +18,7 @@
 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li>{{#link-to "posts" class="navbar-brand navbar-text-style text-downcase"}}Home{{/link-to}}</li>
+          <li>{{#link-to "posts" (query-params page='null') class="navbar-brand navbar-text-style text-downcase"}}Home{{/link-to}}</li>
           <li>{{#link-to "posts.new" class="navbar-brand navbar-text-style text-downcase"}}New Post{{/link-to}}</li>
         </ul>
       </div>

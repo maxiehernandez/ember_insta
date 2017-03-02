@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: ['page', 'size'],
-  page: 1,
+  page: null,
   size: 6,
 
   metaData: Ember.computed('model', function(){

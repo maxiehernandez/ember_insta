@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     updatePost: function(model) {
       let route = this;
       model.save().then(function(data) {
-        route.transitionTo('posts');
+        route.transitionTo('/post/' + data.id);
       });
     }
   }
