@@ -57,12 +57,16 @@
 }
 
 .navbar-text-style {
-  font-size: 15px !important;
+  font-size: 15px;
   color: white;
   margin-left: -8px !important;
   &:hover, &:active, &:focus{
     color: #566270;
   }
+}
+
+.icon-bar {
+  background: #fff;
 }
 
 body {
@@ -107,7 +111,7 @@ body {
 
 .search-bar-position {
   margin-top: 8px;
-  margin-right: 10px;
+  margin-right: 60px;
   max-width: 300px;
   position: absolute;
   top: 0;
@@ -215,4 +219,28 @@ body {
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.map-container {
+  .map {
+    margin-top: 30px;
+    height: 350px;
+    max-width: 350px;
+  }
+}
+
+.map-box {
+  color: #fff;
+  min-height: 600px;
+  min-width: 600px;
+  margin-top: 50px;
+  background: #60c5ba;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.map-top-padding {
+  padding-top: 50px;
 }
