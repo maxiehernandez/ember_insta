@@ -24,7 +24,7 @@ export default Ember.Route.extend({
           data: JSON.stringify(postCreation.serialize().data)
         }
         newPost.file.submit().then(function(objectAfterSave) {
-          this.transitionTo('/post/' + objectAfterSave.id);
+          route.transitionTo('/post/' + objectAfterSave.data.id);
         });
       }else {
         user.get('posts').pushObject(postCreation);
