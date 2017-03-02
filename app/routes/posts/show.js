@@ -27,6 +27,7 @@ export default Ember.Route.extend({
         user: user
       });
       commentCreation.save();
+      this.controller.set("body", "");
     },
     cancelComment() {
       this.controller.set("body", "");
