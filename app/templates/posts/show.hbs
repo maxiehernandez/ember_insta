@@ -36,8 +36,9 @@
           <div>
             <strong>{{comment.user.firstName}}</strong>
             <p class="inner-content">
-              {{comment.body}}
-              <small>{{comment.createdAt}}</small>
+              <span class="comment-body">{{comment.body}}</span>
+              <br>
+              <small>{{date-formatter comment.createdAt}}</small>
             </p>
           </div>
         {{/each}}

@@ -10,8 +10,8 @@
   <div class="row image-view-row margin-top-20">
     {{#each posts as |post|}}
       {{#link-to "posts.show" post}}
-        <div class="col-sm-4 col-md-4" style="margin-bottom: 30px; max-height: 300px; height: 300px">
-          <div class="image-container-block">
+        <div class="col-sm-4 col-md-4 image-card" style="margin-bottom: 30px; max-height: 300px; height: 300px">
+          <div class="image-container-block text-center">
             <div class="image-container">
               {{#if post.file }}
                 <img src= {{post.file}} class="post-image"> {{else if post.imageUrl }}

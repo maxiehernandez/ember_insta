@@ -22,6 +22,8 @@ module.exports = function(defaults) {
 
   app.import('vendor/gmaps.js');
 
+  app.import('bower_components/moment/moment.js');
+
   // file upload test
   app.import('bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js');
   app.import('bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js');
