@@ -19,15 +19,17 @@ export default Ember.Route.extend({
       });
     },
     createNewComment: function(body) {
+      const route = this;
       const post = this.controller.get('model');
-      const user = this.store.findRecord("user", 1);
-      const commentCreation = this.store.createRecord('comment', {
-        body: body,
-        post: post,
-        user: user
+      const user = this.store.findRecord("user", 1).then(function(user){
+        const commentCreation = route.store.createRecord('comment', {
+          body: body,
+          post: post,
+          user: user
+        });
+        commentCreation.save();
+        route.controller.set("body", "");
       });
-      commentCreation.save();
-      this.controller.set("body", "");
     },
     cancelComment() {
       this.controller.set("body", "");

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    let user = this.store.findRecord("user", 1)
+    let user = this.store.findRecord("user", 1);
     user.then(function(user){
       return user;
     });
