@@ -35,7 +35,10 @@
         {{#each model.comments as |comment|}}
           <div>
             <strong>{{comment.user.firstName}}</strong>
-            <p class="inner-content">{{comment.body}}</p>
+            <p class="inner-content">
+              {{comment.body}}
+              <small>{{comment.createdAt}}</small>
+            </p>
           </div>
         {{/each}}
       </div>
