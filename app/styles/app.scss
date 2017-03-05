@@ -15,7 +15,7 @@
 }
 
 .image-container-block {
-  min-height: 260px;
+  min-height: 220px;
 }
 
 .image-container {
@@ -23,7 +23,10 @@
 }
 
 .image-card {
-  // margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  min-height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -38,10 +41,6 @@
   margin-top: 10px;
   max-width: 100%;
   max-height: 240px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .post-container {
