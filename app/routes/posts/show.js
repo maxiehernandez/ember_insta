@@ -31,6 +31,10 @@ export default Ember.Route.extend({
         });
         commentCreation.save();
         route.controller.set("body", "");
+      }).then(function() {
+        setTimeout(function() {
+          $(".scrolling-comments").scrollTop($(".scrolling-comments")[0].scrollHeight);
+        }, 50)
       });
     },
     cancelComment() {

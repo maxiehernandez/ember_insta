@@ -87,12 +87,19 @@ body {
   color: #566270;
 }
 
-.btn-grey {
+@mixin btn-atv {
   color: #fff;
   background-color: #a3a1a1;
   border-color: #a3a1a1;
   border-radius: 1px;
   margin: 2px;
+}
+
+.btn-grey {
+  @include btn-atv;
+  &:focus, &:active {
+    @include btn-atv;
+  }
   &:hover{
     color: #fff;
     background-color: #8b8687;
@@ -160,7 +167,7 @@ body {
 
 .inner-content {
   background-color: #60c5ba;
-  max-width: 40%;
+  max-width: 90%;
   border-radius: 5px;
   padding: 10px;
   margin-top: 12px;

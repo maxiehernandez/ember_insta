@@ -3,14 +3,14 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function() {
     let user = this.store.findRecord("user", 1);
-    user.then(function(user){
+    user.then(function(user) {
       return user;
     });
   },
   actions: {
     createNewPost: function(newPost) {
       let route = this,
-          user = this.store.peekRecord("user", 1);
+        user = this.store.peekRecord("user", 1);
       const postCreation = this.store.createRecord('post', {
         imageUrl: newPost.imageUrl,
         fileName: newPost.fileName,
@@ -26,11 +26,16 @@ export default Ember.Route.extend({
         newPost.file.submit().then(function(objectAfterSave) {
           route.transitionTo('/post/' + objectAfterSave.data.id);
         });
-      }else {
-        user.get('posts').pushObject(postCreation);
-        postCreation.save().then(function(objectAfterSave) {
-          route.transitionTo('/post/' + objectAfterSave.id);
-        });
+      } else {
+        if (/^(ftp|http|https):\/\/[^ "]+$/.test(newPost.imageUrl)) {
+          user.get('posts').pushObject(postCreation);
+          postCreation.save().then(function(objectAfterSave) {
+            route.transitionTo('/post/' + objectAfterSave.id);
+          });
+        } else {
+        // $(".url-input").addClass("error");
+        alert("Please put in a valid URL.")
+        }
       }
     }
   }
