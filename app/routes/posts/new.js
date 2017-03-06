@@ -33,8 +33,7 @@ export default Ember.Route.extend({
             route.transitionTo('/post/' + objectAfterSave.id);
           });
         } else {
-        // $(".url-input").addClass("error");
-        alert("Please put in a valid URL.")
+        alert("Please put in a valid URL.");
         }
       }
     }
