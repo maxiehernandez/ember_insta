@@ -45,17 +45,23 @@
       </div>
 
       <br>
-      <form>
-        <div class="leave-comment-box">
-          <label>Leave a Comment:</label>
-          <br> {{textarea rows="4" value=body class="form-control"}}
-        </div>
+      {{#if session.isAuthenticated}}
+        <form>
+          <div class="leave-comment-box">
+            <label>Leave a Comment:</label>
+            <br> {{textarea rows="4" value=body class="form-control"}}
+          </div>
 
-        <div>
-          <button {{action 'createNewComment' body}} class="btn btn-grey">Save</button>
-          <button {{action 'cancelComment' body}} class="btn btn-grey">Cancel</button>
-        </div>
-      </form>
+          <div>
+            <button {{action 'createNewComment' body}} class="btn btn-grey">Save</button>
+            <button {{action 'cancelComment' body}} class="btn btn-grey">Cancel</button>
+          </div>
+        </form>
+      {{else}}
+        <!-- <div class="container text-center"> -->
+          <h3>Sorry, you must be logged in to leave a comment.</h3>
+        <!-- </div> -->
+      {{/if}}
     </div>
   </div>
 </div>
