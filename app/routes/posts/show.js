@@ -19,7 +19,6 @@ export default Ember.Route.extend({
       });
     },
     createNewComment: function(body, createdAt) {
-      console.log(body, "this is the body", createdAt, "this is createdAt");
       const route = this;
       const post = this.controller.get('model');
       const user = this.store.findRecord("user", 1).then(function(user){

@@ -10,7 +10,6 @@ export default Ember.Service.extend({
       method: "GET",
       success: function(data) {
         if (data) {
-          console.log(data.data.attributes);
           let currentUser = data.data.attributes;
           service.set("currentUser", currentUser);
         }
