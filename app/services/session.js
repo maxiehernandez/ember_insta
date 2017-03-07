@@ -2,19 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   currentUser: null,
-  const sessionService = this;
 
   init() {
+    const service = this;
     Ember.$.ajax({
-        url: 'http://localhost:3000/users/current',
-        method: "GET",
-        success: function(data) {
-          if (data) {
-            var currentUser = store.push(store.normalize("user", data.data));
-            var current_user = sessionService.set("currentUser", currentUser);
-            sessionService.notifyPropertyChange("currentUser");
-          }
+      url: 'http://localhost:3000/users/current',
+      method: "GET",
+      success: function(data) {
+        if (data) {
+          console.log(data.data.attributes);
+          let currentUser = data.data.attributes;
+          service.set("currentUser", currentUser);
         }
       }
-    }
+    })
+  }
 });
