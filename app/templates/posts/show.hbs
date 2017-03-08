@@ -17,10 +17,6 @@
         </div>
       </div>
 
-      {{#link-to 'posts' class="btn btn-grey" }}
-        Back
-      {{/link-to}}
-
       {{#link-to 'posts.edit' model.id class="btn btn-grey" }}
         Edit
       {{/link-to}}
@@ -58,9 +54,7 @@
           </div>
         </form>
       {{else}}
-        <!-- <div class="container text-center"> -->
-          <h3>Sorry, you must be logged in to leave a comment.</h3>
-        <!-- </div> -->
+        <h3>You must be logged in to leave a comment.</h3>
       {{/if}}
     </div>
   </div>
