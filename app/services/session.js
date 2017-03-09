@@ -15,8 +15,8 @@ export default Ember.Service.extend({
         async:true,
         success: function(data) {
           if (data) {
-            const currentUser = store.push(store.normalize("user", data.data));
-            const current_user = service.set("currentUser", currentUser);
+            // const currentUser = store.push(store.normalize("user", data.data));
+            // const current_user = service.set("currentUser", currentsUser);
           }
         },
         error: function(error) {
