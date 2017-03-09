@@ -13,13 +13,12 @@
         <div class="col-sm-4 col-md-4" style="margin-bottom: 30px; max-height: 300px; height: 300px">
           <div class="image-card">
             <div class="image-container-block text-center">
-              <div class="image-container">
-                {{#if post.file }}
-                  <img src= {{post.file}} class="post-image"> {{else if post.imageUrl }}
-                  <img src= {{post.imageUrl}} class="post-image">
-                {{/if}}
-              </div>
+              {{#if post.file }}
+                <img src= {{post.file}} class="post-image"> {{else if post.imageUrl }}
+                <img src= {{post.imageUrl}} class="post-image">
+              {{/if}}
             </div>
+            <hr>
             <div class="font-color">
               Title: <strong>{{post.fileName}}</strong>
             </div>
@@ -39,8 +38,8 @@
         <li class="arrow"><a href="" {{action "prevPage"}}>&laquo;</a></li>
         {{#if lastThreePages}}
           <!-- <li class="unavailable">
-          <a href="">&hellip;</a>
-        </li> -->
+            <a href="">&hellip;</a>
+          </li> -->
           {{#if metaData.prevPage}}
             <li>
               {{#link-to "posts" (query-params page=metaData.prevPage)}}
@@ -114,4 +113,3 @@
     </div>
   </div>
 </div>
-{{outlet}}
